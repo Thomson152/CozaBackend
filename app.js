@@ -1,7 +1,7 @@
 /** @format */
 
 import express from "express";
-
+import cors from 'cors'
 import dotenv from "dotenv";
 import MongoDB from "./Config/db.js";
 import userRoute from './routes/userRoute.js'
@@ -13,7 +13,7 @@ import { errorHandler, notFound } from "./middleware/errorMiddlewares.js";
 dotenv.config();
 const app = express();
 MongoDB();
-
+app.use(cors())
 app.use(express.json());
 
 
