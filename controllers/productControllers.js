@@ -27,7 +27,7 @@ const getProducts = asyncHandler(async (req, res) => {
     .limit(pageSize) // Limit the number of products per page
     .skip(pageSize * (page - 1)); // Skip products based on the current page to get the appropriate subset
 
-  res.json({ products, page, pages: Math.ceil(count / pageSize) }); // Return the products, current page number, and total number of pages
+  res.json({ products, page, pages:Math.ceil(count / pageSize) }); // Return the products, current page number, and total number of pages
 });
 
 
